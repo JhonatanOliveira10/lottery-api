@@ -60,13 +60,12 @@ export default function Analysis() {
     <>
       <Row justify="space-between" align="middle">
         <Col>
-          <TitleCustom text="Análise de cargo" />
+          <TitleCustom text="Análise de Jogo" />
         </Col>
       </Row>
       <Paragraph>
-        Utilize o formulário abaixo para fornecer informações sobre seu nível
-        atual, stack e tecnologias que você domina. Em seguida, cole a descrição
-        da vaga e obtenha uma análise detalhada.
+        Utilize o formulário abaixo para fornecer informações sobre o seu tipo
+        de jogo, quantos números e quantos jogos você deseja fazer.
       </Paragraph>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Col span={12}>
@@ -138,9 +137,9 @@ export default function Analysis() {
                 style={{ color: "#888", textAlign: "center", padding: "20px" }}
               >
                 <p>
-                  A análise detalhada da descrição da vaga será exibida aqui.
-                  Por favor, preencha o formulário ao lado e clique no botão
-                  `Analisar vaga` para obter a análise.
+                  As análises detalhadas dos jogos seram exibidas aqui. Por
+                  favor, preencha o formulário ao lado e clique no botão
+                  `Simular Jogos` para obter a análise.
                 </p>
               </div>
             )}

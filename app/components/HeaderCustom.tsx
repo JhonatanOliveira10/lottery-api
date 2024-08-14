@@ -11,11 +11,6 @@ export default function HeaderCustom() {
 
   const items: MenuProps["items"] = [
     {
-      key: "/",
-      label: "Sobre",
-      onClick: () => router.push("/"),
-    },
-    {
       key: "/analysis",
       label: "Análise",
       onClick: () => router.push("/analysis"),
