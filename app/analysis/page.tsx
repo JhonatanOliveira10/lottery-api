@@ -44,15 +44,20 @@ export default function Analysis() {
 
   const handleCurrentLevelChange = (value: string) => {
     setCurrentLevel(value);
+
+    const minNumbers =
+      value === "Mega-Sena" ? 6 : value === "Lotofacil" ? 15 : 50;
     form.setFieldsValue({
-      currentStack: value === "Mega-Sena" ? 6 : 15,
+      currentStack: minNumbers,
     });
   };
 
   useEffect(() => {
+    const minNumbers =
+      currentLevel === "Mega-Sena" ? 6 : currentLevel === "Lotofacil" ? 15 : 50;
     form.setFieldsValue({
       currentLevel: currentLevel,
-      currentStack: currentLevel === "Mega-Sena" ? 6 : 15,
+      currentStack: minNumbers,
     });
   }, [form, currentLevel]);
 
@@ -76,7 +81,12 @@ export default function Analysis() {
               style={{ marginBottom: "24px" }}
               initialValues={{
                 currentLevel: currentLevel,
-                currentStack: currentLevel === "Mega-Sena" ? 6 : 15,
+                currentStack:
+                  currentLevel === "Mega-Sena"
+                    ? 6
+                    : currentLevel === "Lotofacil"
+                    ? 15
+                    : 50,
                 technologies: 1,
               }}
             >
@@ -89,12 +99,19 @@ export default function Analysis() {
                 >
                   <Option value="Mega-Sena">Mega-Sena</Option>
                   <Option value="Lotofacil">Lotofacil</Option>
+                  <Option value="Lotomania">Lotomania</Option>
                 </Select>
               </Form.Item>
               <Form.Item label="Quantidade de números" name="currentStack">
                 <InputNumber
-                  min={currentLevel === "Mega-Sena" ? 6 : 15}
-                  max={20}
+                  min={
+                    currentLevel === "Mega-Sena"
+                      ? 6
+                      : currentLevel === "Lotofacil"
+                      ? 15
+                      : 50
+                  }
+                  max={50}
                   placeholder="Selecione a quantidade de números"
                   style={{ width: "100%" }}
                 />
